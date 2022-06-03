@@ -5,15 +5,25 @@ import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { GraphicalComponent } from './pages/graphical/graphical.component';
 import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component';
+import { PagesComponent } from './pages/pages.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 
 const routes: Routes = [
-  {path: 'dashboard', component: DashboardComponent},
+  //Definining child routes
+  {
+    path: '', 
+    component: PagesComponent,
+    children: [
+      {path: 'dashboard', component: DashboardComponent},
+      {path: 'progress', component: ProgressComponent},
+      {path: 'graphical', component: GraphicalComponent},
+      {path: '', redirectTo: '/dashboard', pathMatch: 'full'}
+    ]
+  },
+  
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'progress', component: ProgressComponent},
-  {path: 'graphical', component: GraphicalComponent},
-  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+
   {path: '**', component: NopagefoundComponent}
 ]
 
