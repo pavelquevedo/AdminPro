@@ -4,10 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 //Modules
 import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
-import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule,
+    AppRoutingModule,
     PagesModule,
     AuthModule
   ],
