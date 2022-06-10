@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AccountSettingsComponent } from "./account-settings/account-settings.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { GraphicalComponent } from "./graphical/graphical.component";
 import { PagesComponent } from "./pages.component";
@@ -14,7 +15,8 @@ const routes: Routes = [
         children: [
             { path: '', component: DashboardComponent },
             { path: 'progress', component: ProgressComponent },
-            { path: 'graphical', component: GraphicalComponent }
+            { path: 'chart', component: GraphicalComponent },
+            { path: 'account-settings', component: AccountSettingsComponent },
             // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
         ]
     }
